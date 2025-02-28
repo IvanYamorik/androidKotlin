@@ -8,7 +8,9 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.MaterialTheme
@@ -38,10 +40,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    MainImage(
-                        line1 = stringResource(R.string.tasks_completion),
-                        praise = stringResource(R.string.evaluation)
-                    )
+                    TaskCompletedScreen()
 
                 }
             }
@@ -50,22 +49,30 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun SuccessText(line1: String, praise: String, modifier: Modifier = Modifier) {
+fun TaskCompletedScreen() {
 
     Column(
-        modifier = modifier,
+        modifier = Modifier
+            .fillMaxWidth()
+            .fillMaxHeight(),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
+        val image = painterResource(R.drawable.ic_task_completed)
+        Image(
+            painter = image,
+            contentDescription = null,
+            alignment = Alignment.Center
+        )
         Text(
-            text = line1,
+            text = stringResource(R.string.tasks_completion),
             fontWeight = FontWeight.Bold,
             modifier = Modifier
                 .padding(top = 24.dp, bottom = 8.dp),
             textAlign = TextAlign.Center
         )
         Text(
-            text = praise,
+            text = stringResource(R.string.evaluation),
             fontSize = 16.sp,
             textAlign = TextAlign.Center,
 
@@ -73,34 +80,12 @@ fun SuccessText(line1: String, praise: String, modifier: Modifier = Modifier) {
     }
 }
 
-@Composable
-fun MainImage(line1: String, praise: String, modifier: Modifier = Modifier) {
-    val image = painterResource(R.drawable.ic_task_completed)
 
-    Column(modifier) {
-        Image(
-            painter = image,
-            contentDescription = null,
-            modifier = Modifier.size(370.dp),
-            alignment = Alignment.Center,
-
-
-        )
-        SuccessText(
-            line1 = line1,
-            praise = praise,
-            modifier = Modifier.size(370.dp)
-        )
-    }
-}
 
 @Preview(showBackground = true)
 @Composable
-fun GreetingPreview() {
+fun TaskCompletedPreview() {
     TaskManagerTheme {
-            MainImage(
-                line1 = stringResource(R.string.tasks_completion),
-                praise = stringResource(R.string.evaluation)
-            )
+        TaskCompletedScreen()
     }
 }

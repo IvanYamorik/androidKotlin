@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -13,6 +14,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
@@ -90,7 +92,7 @@ fun DrinkLemonadeApp() {
                     onImageClick = {
                         currentStep = 2
                         squeezeCount = (2..4).random()
-                    }
+                    } //a logic for squeeze
                 )
             }
 //fun LemonTextAndImage calling for each step
@@ -103,7 +105,7 @@ fun DrinkLemonadeApp() {
                         squeezeCount--
                         if (squeezeCount == 0) {
                             currentStep = 3
-                        }
+                        } //squeezeCount decreases after each tap, when == 0 -> change screen
                     }
                 )
 
@@ -136,6 +138,7 @@ fun DrinkLemonadeApp() {
   }
 }
 
+//main structure of app's UI and onImageClick parameter to do action upon tapping
 @Composable
 fun LemonTextAndImage(
     textLabelResourceId: Int,
@@ -169,7 +172,8 @@ fun LemonTextAndImage(
             Spacer(modifier = Modifier.height(dimensionResource(R.dimen.padding_vertical)))
             Text(
                 text = stringResource(textLabelResourceId),
-                style = MaterialTheme.typography.bodyLarge
+                style = MaterialTheme.typography.bodyLarge,
+
             )
 
         }

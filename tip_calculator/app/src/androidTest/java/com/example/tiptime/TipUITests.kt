@@ -14,7 +14,7 @@ class TipUITests {
     val composeTestRule = createComposeRule()
 
     @Test
-    fun calculate_20_percent_tip() {
+    fun calculate20percentTip() {
         composeTestRule.setContent {
             TipTimeTheme {
                 TipTimeLayout()

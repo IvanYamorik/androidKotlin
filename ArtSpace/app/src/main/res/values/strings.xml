@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Art Space</string>
+    <string name="artwork_title_1">Lion</string>
+    <string name="artwork_artist_year_1">Ivan Yamoryk (2025)</string>
+    <string name="artwork_title_2">Girl-photographer</string>
+    <string name="artwork_artist_year_2">Oliver Green (2020)</string>
+    <string name="artwork_title_3">Black boy. Something new</string>
+    <string name="artwork_artist_year_3">Unknown author (2005)</string>
+    <string name="artwork_title_4">The Eiffel tower</string>
+    <string name="artwork_artist_year_4">Mr Brown (1997)</string>
+    <string name="artwork_title_5">Sunset on the beach</string>
+    <string name="artwork_artist_year_5">Liza Trofimova (2024)</string>
+    <string name="artwork_title_6">Paper ships on the Minsk street</string>
+    <string name="artwork_artist_year_6">Ivan Yamoryk (2023)</string>
+
+    <string name="previous">Previous</string>
+    <string name="next">Next</string>
+
+
+
+</resources>
